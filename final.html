@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final - Escape Room 2</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script defer src="js/escape.js"></script>
+</head>
+<body onload="initEscape('final')">
+<header class="barra-superior no-imprimir"><nav class="nav-contenedor">
+  <a class="marca" href="index.html"><span class="logo-mini">✓</span><span>Desbloqueo final</span></a>
+  <div class="menu"><a href="index.html">Inicio</a><a href="estacion1.html">E1</a><a href="estacion2.html">E2</a><a href="estacion3.html">E3</a><a href="estacion4.html">E4</a><a href="estacion5.html">E5</a><a class="activo" href="final.html">Final</a><span class="timer" data-timer>00:00</span></div>
+</nav></header>
+
+<main class="contenedor">
+  <section class="estacion-cabecera no-imprimir"><div class="etiqueta">Cofre final</div><h1>Reactivar el sistema</h1><p>Usen los conceptos recuperados durante el recorrido.</p><div class="progreso" data-progress></div></section>
+
+  <section class="grid-dos no-imprimir">
+    <article class="tarjeta">
+      <h2>Conceptos recuperados</h2>
+      <table><tr><th>Estación</th><th>Palabra</th></tr><tr><td>1</td><td>PENDIENTE</td></tr><tr><td>2</td><td>VÉRTICE</td></tr><tr><td>3</td><td>ASÍNTOTA</td></tr><tr><td>4</td><td>POTENCIA</td></tr><tr><td>5</td><td>DOMINIO</td></tr></table>
+      <div class="tarjeta-suave">
+        <h3>Pregunta final</h3>
+        <label for="final_opcion">¿Qué tuvieron que hacer en todas las estaciones?</label>
+        <select id="final_opcion" data-save="final_opcion">
+          <option value="">Seleccionen una respuesta</option>
+          <option>A. Solo reemplazar valores.</option>
+          <option>B. Mirar si la función tenía letras.</option>
+          <option>C. Analizar dominio, raíces, signos, crecimiento y comportamiento gráfico.</option>
+          <option>D. Copiar fórmulas.</option>
+        </select>
+      </div>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Código final</h2>
+      <p>El código se forma con:</p>
+      <ul><li>cantidad de letras de PENDIENTE;</li><li>cantidad de letras de VÉRTICE;</li><li>cantidad de raíces de la cuadrática;</li><li>cantidad total de asíntotas en las estaciones 3, 4 y 5.</li></ul>
+      <div class="campo"><label for="codigo">Código del cofre</label><input id="codigo" type="text" inputmode="numeric" maxlength="4" placeholder="Ejemplo: 0000" /></div>
+      <div class="botones"><button class="boton verde" onclick="validateFinal()">Abrir cofre</button><button class="boton secundario" onclick="toggleHint('pistaFinal','final')">Ver pista</button></div>
+      <div id="pistaFinal" class="pista">La racional tiene dos asíntotas; la exponencial, una; y la logarítmica, una.</div>
+      <div id="resultado" class="mensaje"></div>
+    </article>
+  </section>
+
+  <section class="tarjeta no-imprimir" style="margin-top:1rem;">
+    <h2>Puesta en común</h2>
+    <div class="form-grid">
+      <div class="campo campo-ancho"><label for="final_facil">¿Qué estación les resultó más sencilla y por qué?</label><textarea id="final_facil" data-save="final_facil"></textarea></div>
+      <div class="campo campo-ancho"><label for="final_dominio">¿En cuál debieron prestar más atención al dominio?</label><textarea id="final_dominio" data-save="final_dominio"></textarea></div>
+      <div class="campo campo-ancho"><label for="final_diferencias">Expliquen la diferencia entre raíz, ordenada al origen y asíntota.</label><textarea id="final_diferencias" data-save="final_diferencias"></textarea></div>
+      <div class="campo campo-ancho"><label for="final_analisis">¿Qué significa realizar el análisis completo de una función?</label><textarea id="final_analisis" data-save="final_analisis"></textarea></div>
+    </div>
+    <p id="estadoGuardado" class="guardado" aria-live="polite"></p>
+  </section>
+
+  <section id="informeCompleto" class="tarjeta informe" style="margin-top:1rem;">
+    <div class="no-imprimir">
+      <div class="etiqueta etiqueta-azul">Entrega del grupo</div>
+      <h2>Informe final imprimible</h2>
+      <p>Revisen los datos. Luego impriman o guarden esta sección como PDF y envíen el archivo por correo.</p>
+      <div class="botones">
+        <button class="boton" onclick="renderReport()">Actualizar informe</button>
+        <button class="boton verde" onclick="printReport()">Imprimir / guardar PDF</button>
+        <button class="boton secundario" onclick="downloadReport()">Descargar respuestas .txt</button>
+        <button class="boton amarillo" onclick="prepareEmail()">Preparar correo</button>
+      </div>
+      <div id="mensajeInforme" class="mensaje"></div>
+    </div>
+    <div id="contenidoInforme"></div>
+  </section>
+</main>
+<footer class="footer no-imprimir">Final · Escape Room 2</footer>
+</body>
+</html>

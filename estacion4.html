@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estación 4 - Función exponencial</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/escape.js"></script>
+</head>
+<body onload="initEscape('estacion4')">
+<header class="barra-superior"><nav class="nav-contenedor">
+  <a class="marca" href="index.html"><span class="logo-mini">4</span><span>Función exponencial</span></a>
+  <div class="menu"><a href="index.html">Inicio</a><a href="estacion1.html">E1</a><a href="estacion2.html">E2</a><a href="estacion3.html">E3</a><a class="activo" href="estacion4.html">E4</a><a href="estacion5.html">E5</a><a href="final.html">Final</a><span class="timer" data-timer>00:00</span></div>
+</nav></header>
+
+<main class="contenedor">
+  <section class="estacion-cabecera"><div class="etiqueta">Estación 4</div><h1>Respuesta del alternador</h1><p>La señal aumenta rápidamente a partir de un nivel de referencia.</p><div class="progreso" data-progress></div></section>
+
+  <section class="grid-dos">
+    <article class="tarjeta">
+      <h2>Modelo exponencial</h2><div class="formula">\[ p(x)=3^x-9 \]</div>
+      <div class="form-grid">
+        <div class="campo"><label for="e4_dominio">Dominio</label><input id="e4_dominio" type="text" data-save="e4_dominio" /></div>
+        <div class="campo"><label for="e4_imagen">Imagen</label><input id="e4_imagen" type="text" data-save="e4_imagen" /></div>
+        <div class="campo"><label for="e4_raiz">Raíz</label><input id="e4_raiz" type="text" data-save="e4_raiz" /></div>
+        <div class="campo"><label for="e4_ordenada">Ordenada al origen</label><input id="e4_ordenada" type="text" data-save="e4_ordenada" /></div>
+        <div class="campo"><label for="e4_asintota">Asíntota horizontal</label><input id="e4_asintota" type="text" data-save="e4_asintota" /></div>
+        <div class="campo"><label for="e4_monotonia">Crecimiento o decrecimiento</label><input id="e4_monotonia" type="text" data-save="e4_monotonia" /></div>
+        <div class="campo campo-ancho"><label for="e4_signo">Conjunto de positividad y negatividad</label><textarea id="e4_signo" data-save="e4_signo"></textarea></div>
+        <div class="campo campo-ancho"><label for="e4_justificacion">Justificación breve</label><textarea id="e4_justificacion" data-save="e4_justificacion"></textarea></div>
+      </div>
+      <p id="estadoGuardado" class="guardado" aria-live="polite"></p>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Obtener el código</h2>
+      <p>El código se forma con:</p>
+      <ul><li>dos cifras para la raíz;</li><li>dos cifras para el valor absoluto de la asíntota horizontal.</li></ul>
+      <div class="campo"><label for="codigo">Código de la estación</label><input id="codigo" type="text" inputmode="numeric" maxlength="4" placeholder="Ejemplo: 0000" /></div>
+      <div class="botones"><button class="boton" onclick="validateStation('estacion4')">Validar código</button><button class="boton secundario" onclick="toggleHint('pista4','estacion4')">Ver pista</button></div>
+      <div id="pista4" class="pista">Para la raíz: \(3^x-9=0\). Recuerden que \(9=3^2\).</div>
+      <div id="resultado" class="mensaje"></div>
+    </article>
+  </section>
+</main>
+<footer class="footer">Estación 4 · Función exponencial</footer>
+</body>
+</html>

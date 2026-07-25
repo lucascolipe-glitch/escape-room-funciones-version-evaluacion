@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estación 3 - Función racional</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/escape.js"></script>
+</head>
+<body onload="initEscape('estacion3')">
+<header class="barra-superior"><nav class="nav-contenedor">
+  <a class="marca" href="index.html"><span class="logo-mini">3</span><span>Función racional</span></a>
+  <div class="menu"><a href="index.html">Inicio</a><a href="estacion1.html">E1</a><a href="estacion2.html">E2</a><a class="activo" href="estacion3.html">E3</a><a href="estacion4.html">E4</a><a href="estacion5.html">E5</a><a href="final.html">Final</a><span class="timer" data-timer>00:00</span></div>
+</nav></header>
+
+<main class="contenedor">
+  <section class="estacion-cabecera"><div class="etiqueta">Estación 3</div><h1>Control de presión</h1><p>El modelo se vuelve inestable cerca de un valor prohibido.</p><div class="progreso" data-progress></div></section>
+
+  <section class="grid-dos">
+    <article class="tarjeta">
+      <h2>Modelo racional</h2><div class="formula">\[ h(x)=\frac{-6}{x-3}+1 \]</div>
+      <div class="form-grid">
+        <div class="campo"><label for="e3_dominio">Dominio</label><input id="e3_dominio" type="text" data-save="e3_dominio" /></div>
+        <div class="campo"><label for="e3_raiz">Raíz</label><input id="e3_raiz" type="text" data-save="e3_raiz" /></div>
+        <div class="campo"><label for="e3_ordenada">Ordenada al origen</label><input id="e3_ordenada" type="text" data-save="e3_ordenada" /></div>
+        <div class="campo"><label for="e3_asintotas">Asíntotas vertical y horizontal</label><input id="e3_asintotas" type="text" data-save="e3_asintotas" /></div>
+        <div class="campo campo-ancho"><label for="e3_signo">Conjunto de positividad y negatividad</label><textarea id="e3_signo" data-save="e3_signo"></textarea></div>
+        <div class="campo campo-ancho"><label for="e3_monotonia">Crecimiento o decrecimiento en cada intervalo</label><textarea id="e3_monotonia" data-save="e3_monotonia"></textarea></div>
+        <div class="campo campo-ancho"><label for="e3_justificacion">Justificación breve</label><textarea id="e3_justificacion" data-save="e3_justificacion"></textarea></div>
+      </div>
+      <p id="estadoGuardado" class="guardado" aria-live="polite"></p>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Obtener el código</h2>
+      <p>El código se forma con:</p>
+      <ul><li>raíz;</li><li>asíntota vertical;</li><li>asíntota horizontal;</li><li>ordenada al origen.</li></ul>
+      <div class="campo"><label for="codigo">Código de la estación</label><input id="codigo" type="text" inputmode="numeric" maxlength="4" placeholder="Ejemplo: 0000" /></div>
+      <div class="botones"><button class="boton" onclick="validateStation('estacion3')">Validar código</button><button class="boton secundario" onclick="toggleHint('pista3','estacion3')">Ver pista</button></div>
+      <div id="pista3" class="pista">En \(\frac{k}{x-a}+b\), las asíntotas son \(x=a\) e \(y=b\). Para la raíz, igualen toda la expresión a cero.</div>
+      <div id="resultado" class="mensaje"></div>
+    </article>
+  </section>
+</main>
+<footer class="footer">Estación 3 · Función racional</footer>
+</body>
+</html>

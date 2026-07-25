@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía docente - Escape Room 2</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/escape.js"></script>
+</head>
+<body onload="initEscape('docente')">
+<header class="barra-superior"><nav class="nav-contenedor">
+  <a class="marca" href="index.html"><span class="logo-mini">D</span><span>Guía docente</span></a>
+  <div class="menu"><a href="index.html">Inicio</a><button onclick="resetEscape()">Reiniciar</button><span class="timer" data-timer>00:00</span></div>
+</nav></header>
+
+<main class="contenedor">
+  <section class="hero"><div class="etiqueta">Solo para el docente</div><h1>Respuestas, códigos y entrega digital</h1><p>La clave solo oculta visualmente el contenido; un sitio estático de GitHub Pages no ofrece seguridad real.</p></section>
+
+  <section class="tarjeta">
+    <h2>Ingresar</h2><p>Clave docente: <strong>FUNCIONES</strong></p>
+    <div class="campo"><label for="claveDocente">Clave</label><input id="claveDocente" type="password" placeholder="Escribí la clave" /></div>
+    <button class="boton" onclick="teacherLogin()">Mostrar guía</button><p id="mensajeDocente" class="texto-error"></p>
+  </section>
+
+  <section id="panelDocente" class="oculto">
+    <div class="progreso" data-progress></div>
+    <article class="tarjeta" style="margin-top:1rem;">
+      <h2>Tabla rápida de códigos</h2>
+      <table>
+        <tr><th>Estación</th><th>Función</th><th>Código</th><th>Palabra</th></tr>
+        <tr><td>1 - Lineal</td><td>\(f(x)=-2x+8\)</td><td><span class="codigo">0408</span></td><td>PENDIENTE</td></tr>
+        <tr><td>2 - Cuadrática</td><td>\(g(x)=x^2-6x+5\)</td><td><span class="codigo">1534</span></td><td>VÉRTICE</td></tr>
+        <tr><td>3 - Racional</td><td>\(h(x)=\frac{-6}{x-3}+1\)</td><td><span class="codigo">9313</span></td><td>ASÍNTOTA</td></tr>
+        <tr><td>4 - Exponencial</td><td>\(p(x)=3^x-9\)</td><td><span class="codigo">0209</span></td><td>POTENCIA</td></tr>
+        <tr><td>5 - Logarítmica</td><td>\(q(x)=\log_2(x-4)\)</td><td><span class="codigo">4520</span></td><td>DOMINIO</td></tr>
+        <tr><td>Final</td><td>Integración</td><td><span class="codigo">9724</span></td><td>Sistema reactivado</td></tr>
+      </table>
+      <button class="boton verde" onclick="unlockAll()">Marcar todo como completo</button><div id="docenteOk" class="mensaje"></div>
+    </article>
+
+    <article class="tarjeta" style="margin-top:1rem;">
+      <h2>Respuestas esperadas</h2>
+      <h3>Estación 1 - Lineal</h3><p>Dominio: \(\mathbb{R}\). Raíz: \(x=4\). Ordenada: \(f(0)=8\). Pendiente: \(m=-2\). Decreciente en todo \(\mathbb{R}\). Positiva si \(x&lt;4\), negativa si \(x&gt;4\).</p>
+      <h3>Estación 2 - Cuadrática</h3><p>\(g(x)=(x-1)(x-5)\). Raíces: 1 y 5. Ordenada: 5. Vértice: \((3,-4)\). Eje: \(x=3\). Mínimo: -4. Decrece en \((−\infty,3)\), crece en \((3,+\infty)\). Positiva en \((−\infty,1)\cup(5,+\infty)\) y negativa en \((1,5)\).</p>
+      <h3>Estación 3 - Racional</h3><p>Dominio: \(\mathbb{R}-\{3\}\). Raíz: 9. Ordenada: 3. Asíntota vertical: \(x=3\). Asíntota horizontal: \(y=1\). Positiva en \((−\infty,3)\cup(9,+\infty)\), negativa en \((3,9)\). Creciente en cada intervalo del dominio.</p>
+      <h3>Estación 4 - Exponencial</h3><p>Dominio: \(\mathbb{R}\). Imagen: \((-9,+\infty)\). Raíz: 2. Ordenada: -8. Asíntota horizontal: \(y=-9\). Creciente. Positiva si \(x&gt;2\), negativa si \(x&lt;2\).</p>
+      <h3>Estación 5 - Logarítmica</h3><p>Dominio: \((4,+\infty)\). Imagen: \(\mathbb{R}\). Raíz: 5. No tiene ordenada al origen. Asíntota vertical: \(x=4\). Creciente. Positiva si \(x&gt;5\), negativa si \(4&lt;x&lt;5\).</p>
+    </article>
+
+    <article class="tarjeta" style="margin-top:1rem;">
+      <h2>Cómo funciona la entrega</h2>
+      <ul>
+        <li>Los campos se guardan en <em>localStorage</em> del navegador.</li>
+        <li>El informe final reúne datos del grupo, respuestas, intentos, pistas y estado de cada estación.</li>
+        <li>“Imprimir / guardar PDF” abre el diálogo de impresión del navegador.</li>
+        <li>“Preparar correo” abre el programa de correo; no puede adjuntar automáticamente el PDF por las limitaciones de una página estática.</li>
+        <li>El estudiantado debe adjuntar manualmente el PDF guardado antes de enviar.</li>
+      </ul>
+    </article>
+  </section>
+</main>
+<footer class="footer">Guía docente · Escape Room 2</footer>
+</body>
+</html>

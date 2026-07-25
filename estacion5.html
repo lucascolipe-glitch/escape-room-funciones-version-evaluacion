@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estación 5 - Función logarítmica</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/escape.js"></script>
+</head>
+<body onload="initEscape('estacion5')">
+<header class="barra-superior"><nav class="nav-contenedor">
+  <a class="marca" href="index.html"><span class="logo-mini">5</span><span>Función logarítmica</span></a>
+  <div class="menu"><a href="index.html">Inicio</a><a href="estacion1.html">E1</a><a href="estacion2.html">E2</a><a href="estacion3.html">E3</a><a href="estacion4.html">E4</a><a class="activo" href="estacion5.html">E5</a><a href="final.html">Final</a><span class="timer" data-timer>00:00</span></div>
+</nav></header>
+
+<main class="contenedor">
+  <section class="estacion-cabecera"><div class="etiqueta">Estación 5</div><h1>Escala de diagnóstico</h1><p>El último módulo solo admite entradas mayores que un valor límite.</p><div class="progreso" data-progress></div></section>
+
+  <section class="grid-dos">
+    <article class="tarjeta">
+      <h2>Modelo logarítmico</h2><div class="formula">\[ q(x)=\log_2(x-4) \]</div>
+      <div class="form-grid">
+        <div class="campo"><label for="e5_dominio">Dominio</label><input id="e5_dominio" type="text" data-save="e5_dominio" /></div>
+        <div class="campo"><label for="e5_imagen">Imagen</label><input id="e5_imagen" type="text" data-save="e5_imagen" /></div>
+        <div class="campo"><label for="e5_raiz">Raíz</label><input id="e5_raiz" type="text" data-save="e5_raiz" /></div>
+        <div class="campo"><label for="e5_ordenada">Ordenada al origen</label><input id="e5_ordenada" type="text" data-save="e5_ordenada" /></div>
+        <div class="campo"><label for="e5_asintota">Asíntota vertical</label><input id="e5_asintota" type="text" data-save="e5_asintota" /></div>
+        <div class="campo"><label for="e5_monotonia">Crecimiento o decrecimiento</label><input id="e5_monotonia" type="text" data-save="e5_monotonia" /></div>
+        <div class="campo campo-ancho"><label for="e5_signo">Conjunto de positividad y negatividad</label><textarea id="e5_signo" data-save="e5_signo"></textarea></div>
+        <div class="campo campo-ancho"><label for="e5_justificacion">Justificación breve</label><textarea id="e5_justificacion" data-save="e5_justificacion"></textarea></div>
+      </div>
+      <p id="estadoGuardado" class="guardado" aria-live="polite"></p>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Obtener el código</h2>
+      <p>El código se forma con:</p>
+      <ul><li>asíntota vertical;</li><li>raíz;</li><li>base del logaritmo;</li><li>0, porque no existe ordenada al origen.</li></ul>
+      <div class="campo"><label for="codigo">Código de la estación</label><input id="codigo" type="text" inputmode="numeric" maxlength="4" placeholder="Ejemplo: 0000" /></div>
+      <div class="botones"><button class="boton" onclick="validateStation('estacion5')">Validar código</button><button class="boton secundario" onclick="toggleHint('pista5','estacion5')">Ver pista</button></div>
+      <div id="pista5" class="pista">El argumento debe ser positivo: \(x-4&gt;0\). Para la raíz, usen que \(\log_2(1)=0\).</div>
+      <div id="resultado" class="mensaje"></div>
+    </article>
+  </section>
+</main>
+<footer class="footer">Estación 5 · Función logarítmica</footer>
+</body>
+</html>

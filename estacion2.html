@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estación 2 - Función cuadrática</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/escape.js"></script>
+</head>
+<body onload="initEscape('estacion2')">
+<header class="barra-superior"><nav class="nav-contenedor">
+  <a class="marca" href="index.html"><span class="logo-mini">2</span><span>Función cuadrática</span></a>
+  <div class="menu"><a href="index.html">Inicio</a><a href="estacion1.html">E1</a><a class="activo" href="estacion2.html">E2</a><a href="estacion3.html">E3</a><a href="estacion4.html">E4</a><a href="estacion5.html">E5</a><a href="final.html">Final</a><span class="timer" data-timer>00:00</span></div>
+</nav></header>
+
+<main class="contenedor">
+  <section class="estacion-cabecera"><div class="etiqueta">Estación 2</div><h1>Curva de rendimiento</h1><p>El rendimiento disminuye hasta un mínimo y luego vuelve a aumentar.</p><div class="progreso" data-progress></div></section>
+
+  <section class="grid-dos">
+    <article class="tarjeta">
+      <h2>Modelo cuadrático</h2><div class="formula">\[ g(x)=x^2-6x+5 \]</div>
+      <div class="form-grid">
+        <div class="campo"><label for="e2_dominio">Dominio</label><input id="e2_dominio" type="text" data-save="e2_dominio" /></div>
+        <div class="campo"><label for="e2_raices">Raíces</label><input id="e2_raices" type="text" data-save="e2_raices" /></div>
+        <div class="campo"><label for="e2_ordenada">Ordenada al origen</label><input id="e2_ordenada" type="text" data-save="e2_ordenada" /></div>
+        <div class="campo"><label for="e2_vertice">Vértice y eje de simetría</label><input id="e2_vertice" type="text" data-save="e2_vertice" /></div>
+        <div class="campo"><label for="e2_extremo">Máximo o mínimo</label><input id="e2_extremo" type="text" data-save="e2_extremo" /></div>
+        <div class="campo campo-ancho"><label for="e2_monotonia">Intervalos de crecimiento y decrecimiento</label><textarea id="e2_monotonia" data-save="e2_monotonia"></textarea></div>
+        <div class="campo campo-ancho"><label for="e2_signo">Conjunto de positividad y negatividad</label><textarea id="e2_signo" data-save="e2_signo"></textarea></div>
+        <div class="campo campo-ancho"><label for="e2_justificacion">Justificación breve</label><textarea id="e2_justificacion" data-save="e2_justificacion"></textarea></div>
+      </div>
+      <p id="estadoGuardado" class="guardado" aria-live="polite"></p>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Obtener el código</h2>
+      <p>El código se forma con:</p>
+      <ul><li>primera raíz;</li><li>segunda raíz;</li><li>coordenada \(x\) del vértice;</li><li>valor absoluto de la coordenada \(y\) del vértice.</li></ul>
+      <div class="campo"><label for="codigo">Código de la estación</label><input id="codigo" type="text" inputmode="numeric" maxlength="4" placeholder="Ejemplo: 0000" /></div>
+      <div class="botones"><button class="boton" onclick="validateStation('estacion2')">Validar código</button><button class="boton secundario" onclick="toggleHint('pista2','estacion2')">Ver pista</button></div>
+      <div id="pista2" class="pista">Factoricen: \(x^2-6x+5=(x-1)(x-5)\). Para el vértice usen \(x_v=-\frac{b}{2a}\).</div>
+      <div id="resultado" class="mensaje"></div>
+    </article>
+  </section>
+</main>
+<footer class="footer">Estación 2 · Función cuadrática</footer>
+</body>
+</html>

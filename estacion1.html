@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estación 1 - Función lineal</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/escape.js"></script>
+</head>
+<body onload="initEscape('estacion1')">
+<header class="barra-superior"><nav class="nav-contenedor">
+  <a class="marca" href="index.html"><span class="logo-mini">1</span><span>Función lineal</span></a>
+  <div class="menu"><a href="index.html">Inicio</a><a class="activo" href="estacion1.html">E1</a><a href="estacion2.html">E2</a><a href="estacion3.html">E3</a><a href="estacion4.html">E4</a><a href="estacion5.html">E5</a><a href="final.html">Final</a><span class="timer" data-timer>00:00</span></div>
+</nav></header>
+
+<main class="contenedor">
+  <section class="estacion-cabecera">
+    <div class="etiqueta">Estación 1</div><h1>Calibración del actuador</h1>
+    <p>El desplazamiento disminuye siempre al mismo ritmo.</p><div class="progreso" data-progress></div>
+  </section>
+
+  <section class="grid-dos">
+    <article class="tarjeta">
+      <h2>Modelo lineal</h2><div class="formula">\[ f(x)=-2x+8 \]</div>
+      <p>Realicen el análisis y escriban sus resultados.</p>
+      <div class="form-grid">
+        <div class="campo"><label for="e1_dominio">Dominio</label><input id="e1_dominio" type="text" data-save="e1_dominio" placeholder="Ejemplo: ℝ" /></div>
+        <div class="campo"><label for="e1_raiz">Raíz</label><input id="e1_raiz" type="text" data-save="e1_raiz" /></div>
+        <div class="campo"><label for="e1_ordenada">Ordenada al origen</label><input id="e1_ordenada" type="text" data-save="e1_ordenada" /></div>
+        <div class="campo"><label for="e1_pendiente">Pendiente</label><input id="e1_pendiente" type="text" data-save="e1_pendiente" /></div>
+        <div class="campo campo-ancho"><label for="e1_monotonia">Crecimiento o decrecimiento</label><textarea id="e1_monotonia" data-save="e1_monotonia"></textarea></div>
+        <div class="campo campo-ancho"><label for="e1_signo">Conjunto de positividad y negatividad</label><textarea id="e1_signo" data-save="e1_signo"></textarea></div>
+        <div class="campo campo-ancho"><label for="e1_justificacion">Justificación breve</label><textarea id="e1_justificacion" data-save="e1_justificacion" placeholder="Expliquen cómo obtuvieron los datos principales"></textarea></div>
+      </div>
+      <p id="estadoGuardado" class="guardado" aria-live="polite"></p>
+    </article>
+
+    <article class="tarjeta">
+      <h2>Obtener el código</h2>
+      <p>El código se forma con cuatro cifras:</p>
+      <ul><li>dos cifras para la raíz;</li><li>dos cifras para el valor absoluto de la ordenada al origen.</li></ul>
+      <div class="campo"><label for="codigo">Código de la estación</label><input id="codigo" type="text" inputmode="numeric" maxlength="4" placeholder="Ejemplo: 0000" /></div>
+      <div class="botones"><button class="boton" onclick="validateStation('estacion1')">Validar código</button><button class="boton secundario" onclick="toggleHint('pista1','estacion1')">Ver pista</button></div>
+      <div id="pista1" class="pista">Igualen la función a cero. Para la ordenada, calculen \(f(0)\). Recuerden usar dos cifras para cada dato.</div>
+      <div id="resultado" class="mensaje"></div>
+    </article>
+  </section>
+</main>
+<footer class="footer">Estación 1 · Función lineal</footer>
+</body>
+</html>
